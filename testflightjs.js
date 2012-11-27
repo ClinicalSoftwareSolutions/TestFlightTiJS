@@ -23,7 +23,10 @@
 
 var _osname = Ti.Platform.osname;
 var is_iOS = _osname === 'ipad' || _osname === 'iphone';
-var TF = require('com.clinsoftsolutions.testflight');
+
+if(is_iOS) {
+    var TF = require('com.clinsoftsolutions.testflight');
+}
 
 exports.takeOff = function(_teamToken, _testingFlag) {
 	if(is_iOS) {
