@@ -21,11 +21,11 @@
  * 
  */
 
+var _takeOffDone = false;
 var _osname = Ti.Platform.osname;
 var is_iOS = _osname === 'ipad' || _osname === 'iphone';
-
 if(is_iOS) {
-    var TF = require('com.clinsoftsolutions.testflight');
+	var TF = require('com.clinsoftsolutions.testflight');
 }
 
 exports.takeOff = function(_teamToken, _testingFlag) {
@@ -61,6 +61,7 @@ exports.testException = function() {
 };
 
 exports.passCheckpoint = function(_msg) {
+	if(!_takeOffDone) return;
 	if(is_iOS) {
 		TF.passCheckpoint(_msg);
 	}
@@ -70,6 +71,7 @@ exports.passCheckpoint = function(_msg) {
 };
 
 exports.launchFeedbackView = function() {
+	if(!_takeOffDone) return;
 	if(is_iOS) {
 		TF.launchFeedbackView();
 	}
@@ -79,6 +81,7 @@ exports.launchFeedbackView = function() {
 };
 
 exports.submitFeedback = function(_text) {
+	if(!_takeOffDone) return;
 	if(is_iOS) {
 		TF.submitFeedback(_text);
 	}
@@ -88,6 +91,7 @@ exports.submitFeedback = function(_text) {
 };
 
 exports.remoteLog = function(_text) {
+	if(!_takeOffDone) return;
 	if(is_iOS) {
 		TF.remoteLog(_text);
 	}
@@ -97,6 +101,7 @@ exports.remoteLog = function(_text) {
 };
 
 exports.addCustomEnvironmentInformation = function(_key, _value) {
+	if(!_takeOffDone) return;
 	if(is_iOS) {
 		TF.addCustomEnvironmentInformation(_key, _value);
 	}
