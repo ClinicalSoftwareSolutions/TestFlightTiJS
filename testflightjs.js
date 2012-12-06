@@ -31,6 +31,7 @@ if(is_iOS) {
 exports.takeOff = function(_teamToken, _testingFlag) {
 	if(is_iOS) {
 		TF.takeOff(_teamToken, _testingFlag);
+		_takeOffDone = true;
 	}
 	else {
 		Ti.API.info("Testflight does not yet support platforms other than iOS.");
