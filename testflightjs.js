@@ -55,9 +55,6 @@ exports.setOptions = function(_args) {
 exports.testException = function() {
 	if(is_iOS) {
 		TF.testException();
-	}	
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
 	}
 };
 
@@ -66,18 +63,12 @@ exports.passCheckpoint = function(_msg) {
 	if(is_iOS) {
 		TF.passCheckpoint(_msg);
 	}
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
-	}
 };
 
 exports.launchFeedbackView = function() {
 	if(!_takeOffDone) return;
 	if(is_iOS) {
 		TF.launchFeedbackView();
-	}
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
 	}
 };
 
@@ -86,9 +77,6 @@ exports.submitFeedback = function(_text) {
 	if(is_iOS) {
 		TF.submitFeedback(_text);
 	}
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
-	}	
 };
 
 exports.remoteLog = function(_text) {
@@ -96,9 +84,6 @@ exports.remoteLog = function(_text) {
 	if(is_iOS) {
 		TF.remoteLog(_text);
 	}
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
-	}		
 };
 
 exports.addCustomEnvironmentInformation = function(_key, _value) {
@@ -106,17 +91,11 @@ exports.addCustomEnvironmentInformation = function(_key, _value) {
 	if(is_iOS) {
 		TF.addCustomEnvironmentInformation(_key, _value);
 	}
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
-	}	
 };
 
 exports.setTesting = function() {
 	if(is_iOS) {
 		TF.setTesting();
-	}
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
 	}
 };
 
