@@ -19,7 +19,9 @@ Copy the testflightjs.js file into the Resource directory
 
 Note you no longer need the `var TF = require('com.clinsoftsolutions.testflight');` line
 
-Then use:
+Then use elsewhere in your app:
 
+    var TF = require('testflightjs');
     TF.passCheckpoint("A checkpoint was passed");
 
+There is no need to call `takeOff()` again.
