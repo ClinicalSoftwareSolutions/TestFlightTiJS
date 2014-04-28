@@ -65,13 +65,6 @@ exports.passCheckpoint = function(_msg) {
 	}
 };
 
-exports.launchFeedbackView = function() {
-	if(!_takeOffDone) return;
-	if(is_iOS) {
-		TF.launchFeedbackView();
-	}
-};
-
 exports.submitFeedback = function(_text) {
 	if(!_takeOffDone) return;
 	if(is_iOS) {
@@ -90,21 +83,5 @@ exports.addCustomEnvironmentInformation = function(_key, _value) {
 	if(!_takeOffDone) return;
 	if(is_iOS) {
 		TF.addCustomEnvironmentInformation(_key, _value);
-	}
-};
-
-exports.setTesting = function() {
-	if(is_iOS) {
-		TF.setTesting();
-	}
-};
-
-exports.oldUDID = function() {
-	if(is_iOS) {
-		return TF.oldUDID;
-	}
-	else {
-		Ti.API.info("Testflight does not yet support platforms other than iOS.");
-		return "";
 	}
 };
