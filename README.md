@@ -14,7 +14,6 @@ the Android SDK we will make an Android module too and you probably won't need t
 Copy the testflightjs.js file into the Resource directory
 
     var TF = require('testflightjs');
-    TF.setTesting();	// Remove in release, otherwise app will be REJECTED
     TF.takeOff("__REPLACE WITH YOUR TEAM TOKEN __");
 
 Note you no longer need the `var TF = require('com.clinsoftsolutions.testflight');` line
