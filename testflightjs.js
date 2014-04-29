@@ -28,9 +28,9 @@ if(is_iOS) {
 	var TF = require('com.clinsoftsolutions.testflight');
 }
 
-exports.takeOff = function(_teamToken, _testingFlag) {
+exports.takeOff = function(_teamToken) {
 	if(is_iOS) {
-		TF.takeOff(_teamToken, _testingFlag);
+		TF.takeOff(_teamToken);
 		_takeOffDone = true;
 	}
 	else {
